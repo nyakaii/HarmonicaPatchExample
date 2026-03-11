@@ -1,3 +1,9 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: nyakai <nyakai@example.com>
+Date: Tue, 12 Mar 2026 21:30:00 +0000
+Subject: [PATCH] Patch package name in manifest
+
+
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
 index 784afde..87ba14e 100644
 --- a/AndroidManifest.xml
