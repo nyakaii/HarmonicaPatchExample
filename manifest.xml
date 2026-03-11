@@ -3,6 +3,7 @@
   <patch-info>
     <title>Example patch</title>
     <description>Example patch</description>
+    <patchable-version>26.8.0 (6596)</patchable-version>
     <frida>false</frida>
     <frida-version></frida-version>
     <frida-url></frida-url>
