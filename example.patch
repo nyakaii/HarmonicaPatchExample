@@ -1,0 +1,74 @@
+--- AndroidManifest.xml	2026-03-11 22:37:16.620719123 +0000
++++ AndroidManifest.xml	2026-03-11 22:37:09.917167504 +0000
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" android:installLocation="auto" package="ru.oneme.app" platformBuildVersionCode="35" platformBuildVersionName="15">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" android:installLocation="auto" package="ru.harmonymax.app" platformBuildVersionCode="35" platformBuildVersionName="15">
+     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+@@ -84,7 +84,7 @@
+     <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+     <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+-    <permission android:name="ru.oneme.app.permission.settings.READ" android:protectionLevel="signature"/>
++    <permission android:name="ru.harmonymax.app.permission.settings.READ" android:protectionLevel="signature"/>
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+@@ -96,8 +96,8 @@
+     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+-    <permission android:name="ru.oneme.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+-    <uses-permission android:name="ru.oneme.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
++    <permission android:name="ru.harmonymax.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
++    <uses-permission android:name="ru.harmonymax.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+     <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+     <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+@@ -143,21 +143,21 @@
+             </intent-filter>
+             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+         </activity>
+-        <provider android:authorities="ru.oneme.app.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
++        <provider android:authorities="ru.harmonymax.app.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+             <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+             <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+         </provider>
+-        <provider android:authorities="ru.oneme.app.tracer-startup" android:exported="false" android:name="androidx.startup.InitializationProvider"/>
+-        <provider android:authorities="ru.oneme.app.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
++        <provider android:authorities="ru.harmonymax.app.tracer-startup" android:exported="false" android:name="androidx.startup.InitializationProvider"/>
++        <provider android:authorities="ru.harmonymax.app.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+         </provider>
+         <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="barcode"/>
+-        <provider android:authorities="ru.oneme.app.firebaseinitprovider" android:directBootAware="true" android:enabled="false" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
++        <provider android:authorities="ru.harmonymax.app.firebaseinitprovider" android:directBootAware="true" android:enabled="false" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDJbuC3fODS_aR7jcOkoP6qWIsQen9XARI"/>
+         <receiver android:name="one.me.android.calls.CallNotifierBroadcastReceiver"/>
+         <activity android:name="one.me.android.calls.CallNotifierFixActivity" android:showOnLockScreen="true" android:theme="@style/CallNotifierFixActivityTheme" android:turnScreenOn="true"/>
+         <service android:name="ru.ok.tamtam.android.services.NotificationTamService"/>
+-        <provider android:authorities="ru.oneme.app.notifications" android:exported="false" android:grantUriPermissions="true" android:name="one.me.android.notifications.NotificationsImagesProvider"/>
++        <provider android:authorities="ru.harmonymax.app.notifications" android:exported="false" android:grantUriPermissions="true" android:name="one.me.android.notifications.NotificationsImagesProvider"/>
+         <receiver android:name="one.me.android.TimeChangeReceiver"/>
+         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="ru.ok.messages.media.mediabar.ActLocalMedias" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent.WhiteMenuOverflow.NoCaps.Portrait" android:windowSoftInputMode="stateUnchanged|adjustResize"/>
+         <activity android:exported="false" android:launchMode="singleTop" android:name="ru.ok.messages.media.crop.ActTamCropImage" android:screenOrientation="portrait" android:theme="@style/TamTamTheme.Base"/>
+@@ -226,7 +226,7 @@
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@ca60b3bb-9ba5-4307-8c3f-5218111e10c5" android:value="ru.ok.tracer.nativebridge.NativeBridgeInitializer"/>
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@b7b8ba75-c336-4dee-8e2a-64ef488e0218" android:value="ru.ok.tracer.crash.report.CrashReportInitializer"/>
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@06f2fae1-db2b-4f87-bc14-fc15c26da3b9" android:value="ru.ok.tracer.performance.metrics.PerformanceMetricsInitializer"/>
+-        <provider android:authorities="ru.oneme.app.tracer-startup" android:exported="false" android:name="ru.ok.tracer.startup.InitializationProvider"/>
++        <provider android:authorities="ru.harmonymax.app.tracer-startup" android:exported="false" android:name="ru.ok.tracer.startup.InitializationProvider"/>
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@25573e8a-bb0f-473f-938a-ca5b3541bda1" android:value="ru.ok.tracer.utils.LoggerInitializer"/>
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@e416cfb4-5661-4523-b12c-0ff4ccabd436" android:value="ru.ok.tracer.TracerInitializer"/>
+         <meta-data android:name="ru.ok.tracer.startup.Initializer@0d46a772-bffc-4ede-ac88-5dcaf5f822c1" android:value="ru.ok.tracer.disk.usage.DiskUsageInitializer"/>
+@@ -307,7 +307,7 @@
+         </service>
+         <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+         <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+-        <provider android:authorities="ru.oneme.app.ApplicationProvider" android:exported="false" android:name="ru.ok.android.commons.app.ApplicationProvider"/>
++        <provider android:authorities="ru.harmonymax.app.ApplicationProvider" android:exported="false" android:name="ru.ok.android.commons.app.ApplicationProvider"/>
+         <activity android:name="com.jakewharton.processphoenix.ProcessPhoenix" android:process=":phoenix" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+         <meta-data android:name="com.facebook.soloader.enabled" android:value="false"/>
+         <activity android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
