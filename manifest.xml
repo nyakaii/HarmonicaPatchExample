@@ -1,0 +1,12 @@
+<harmonica>
+  <version>1</version>
+  <patch-info>
+    <title>Example patch</title>
+    <description>Example patch</description>
+    <frida>false</frida>
+    <frida-version></frida-version>
+    <frida-url></frida-url>
+    <update-url>https://github.com/nyakaii/HarmonicaPatchExample/archive/main.zip</update-url>
+    <author>nyakaii</author>
+  </patch-info>
+</harmonica>
