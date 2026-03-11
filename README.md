@@ -10,6 +10,7 @@
   <patch-info>
     <title>Мой супер крутой патч!</title>
     <description>Мой патч добавляет аниме-девочку сусейку десу~</description>
+    <patchable-version>26.8.0 (6596)</patchable-version>
     <frida>false</frida>
     <frida-version></frida-version>
     <update-url>https://github.com/...</update-url>
@@ -27,6 +28,8 @@
 `title` - Название вашего патча. String
 
 `description` - Описание вашего патча. String
+
+`patchable-version` - Конкретная версия (versionCode). String
 
 `frida` - Нужно ли инжектить [frida](https://frida.re)? 
 
