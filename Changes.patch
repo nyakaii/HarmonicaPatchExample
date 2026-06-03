@@ -1,0 +1,11 @@
+--- AndroidManifest.xml	2026-06-04 00:25:19
++++ AndroidManifest1.xml	2026-06-04 00:25:11
+@@ -396,7 +396,7 @@
+         <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.huawei.hms.activity.EnableServiceActivity"/>
+         <meta-data android:name="componentverify_ag_cbg_root" android:value="@string/ag_sdk_cbg_root"/>
+         <uses-library android:name="hwkeystore" android:required="false"/>
+-        <meta-data android:name="com.huawei.hms.client.service.name:dynamic-api" android:value="dynamic-api:1.0.25.300"/>
++        
+         <meta-data android:name="com.huawei.hms.min_api_level:dynamic-api:huawei_module_dynamicloader" android:value="11"/>
+         <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/>
+         <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
